@@ -1,0 +1,28 @@
+html{
+    font-size: 10px;
+
+}
+
+.title{
+    font-size: 7rem;
+    font-family: fantasy;
+       font-weight: 100;
+       letter-spacing: -1px;
+   text-align: center;
+   margin: 10px; 
+}
+.photowall{
+    max-width: 1000px;
+    margin: 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+ 
+
+}
+.photo{
+    border: 1px solid #d3d3d3;
+    padding: 3rem;
+    margin: 0 2rem 2rem 2rem;
+    flex-basis: 33.333%;
+    flex-grow: 1;
+}
