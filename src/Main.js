@@ -2,33 +2,35 @@ import React from 'react'
 import Title from './components/Title'
 import './styles/style.css'
 import Photowall from './components/Photowall'
-import Api from './api'
+
 import {Route} from 'react-router-dom'
 import AddPhoto from './components/AddPhoto'
 
+
 class Main extends React.Component
 {
-  
-
+       
    render(){
-       console.log(this.props.posts)
+           
+    
        return(<div>
 
           <Route exact path="/" render={()=>(
                   <div>
                   <Title title={'Photowall'}/>
                 
-                   <Photowall items={this.props.posts} onRemovePost={this.removePost} />
+                   <Photowall  {...this.props} />
                   </div>
           )}/>
-          {/* <Route  path="/addPhoto" render={({history})=>(
+          <Route  path="/addPhoto" render={({history})=>(
                   <div>
                  <AddPhoto onAddPost={(post)=>{
-                         this.addPhoto(post);
+                         console.log(post)
+                              this.props.addPhoto(post);
                             history.push("/");
                  }}/>
                   </div>
-          )}/> */}
+          )}/>
                
                </div>
        );

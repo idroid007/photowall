@@ -2,7 +2,10 @@ import React from 'react'
 import Title from './Title'
 class AddPhoto extends React.Component{
     render(){
-        return (<div>
+        {console.log(this.props)}
+        return (
+       
+        <div>
             <Title title={'Add new photo to album'}/>
 
            <form onSubmit={(e)=>{
