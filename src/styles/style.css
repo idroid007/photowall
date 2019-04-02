@@ -61,3 +61,15 @@ html{
     border:1px solid #d3d3d3;
     border-radius: 5px; 
 }
+.single-photo{
+    padding:50px;
+    display:flex;
+    margin:20px;
+
+}
+.single-photo figure{
+    flex: 1;
+}
+.single-photo div{
+    flex: 1;
+}
