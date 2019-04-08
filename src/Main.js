@@ -2,51 +2,39 @@ import React from 'react'
 import Title from './components/Title'
 import './styles/style.css'
 import Photowall from './components/Photowall'
-import Api from './api'
+import Single from './components/Single'
 import {Route} from 'react-router-dom'
 import AddPhoto from './components/AddPhoto'
 
+
 class Main extends React.Component
 {
-   constructor(){
-
-        super();
-           this.state={posts:[]};
-           this.removePost=this.removePost.bind(this);
-           this.addPhoto=this.addPhoto.bind(this);
-   }
-   componentDidMount(){
-           const data = Api.getData();
-           console.log(data)
-           this.setState({posts:data});
-   }
-    addPhoto(post){
-            const posts = this.state.posts;
-            posts.unshift(post)
-            console.log(posts)
-        this.setState({posts:posts})
-    }
-    removePost(post){
-      this.setState({posts:this.state.posts.filter((x)=>{return post!==x})})
-    }
-   render(){
        
+   render(){
+           
+    
        return(<div>
 
-          <Route exact path="/" render={()=>(
+          <Route exact path="/" render={(params)=>(
                   <div>
                   <Title title={'Photowall'}/>
-               
-                  <Photowall items={this.state.posts} onRemovePost={this.removePost} />
+                
+                   <Photowall  {...this.props} {...params}/>
                   </div>
           )}/>
           <Route  path="/addPhoto" render={({history})=>(
                   <div>
                  <AddPhoto onAddPost={(post)=>{
-                         this.addPhoto(post);
+                        
+                              this.props.addPhoto(post);
                             history.push("/");
                  }}/>
                   </div>
+          )}/>
+          <Route path={`/single/:id`} render={(params)=>(
+                  
+                <Single {...this.props} {...params} />
+                
           )}/>
                
                </div>

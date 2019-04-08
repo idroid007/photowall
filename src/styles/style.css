@@ -48,3 +48,28 @@ html{
     padding:5px;
     cursor: pointer;
 }
+
+.btn{
+    width:10%;
+    display:block;
+    margin: 10px auto;
+    color: black;
+    text-decoration:none;
+    text-align: center;
+    padding: 5px 10px;
+    background-color: gray;
+    border:1px solid #d3d3d3;
+    border-radius: 5px; 
+}
+.single-photo{
+    padding:50px;
+    display:flex;
+    margin:20px;
+
+}
+.single-photo figure{
+    flex: 1;
+}
+.single-photo div{
+    flex: 1;
+}
